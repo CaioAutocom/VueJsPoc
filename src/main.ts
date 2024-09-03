@@ -9,9 +9,10 @@ const pinia = createPinia();
 const app = createApp(App);
 app.use(
     PrimeVue, 
-    pinia, {
+    {
     theme: {
         preset: Aura
-    }
+    },
+    pinia
 });
 app.mount('#app')
