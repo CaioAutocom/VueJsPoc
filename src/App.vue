@@ -1,4 +1,6 @@
 <template>
+  <Button label="Toggle Dark Mode" @click="toggleDarkMode()" />
+
   <div class="card flex justify-center">
     <Stepper v-model:value="activeStep" class="basis-[40rem]">
       <StepList>
@@ -231,7 +233,12 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
+
+function toggleDarkMode() {
+  const element = document.querySelector('html');
+  element.classList.toggle('my-app-dark');
+}
 
 const activeStep = ref(1);
 const completed = ref(false);
