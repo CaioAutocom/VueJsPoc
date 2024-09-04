@@ -6,6 +6,10 @@ import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import Ripple from 'primevue/ripple';
 
+import 'tailwindcss/tailwind.css'
+import 'primeicons/primeicons.css';
+
+
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -18,9 +22,9 @@ app.use(
         theme: {
             preset: Aura,
             options: {
-                prefix: 'p',
+                prefix: 'pv', 
                 darkModeSelector: 'light',
-                cssLayer: false
+                cssLayer: false 
             }
         }
     },
