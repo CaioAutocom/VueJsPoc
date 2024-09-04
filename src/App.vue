@@ -1,10 +1,35 @@
 <template>
   <div class="flex justify-center items-center min-h-screen">
-    <Panel class="min-w-60">
+    <Panel class="w-80">
       <h1 class="flex pb-8 justify-center items-center">Login</h1>
-      <label for="username">Username</label>
-      <InputText id="username" v-model="value" class="min-w-full" />
-      <Password v-model="value" toggleMask class="min-w-full" />
+      <IconField>
+        <InputIcon class="pi pi-user" />
+        <InputText fluid v-model="value1" placeholder="Usuário" />
+      </IconField>
+      <!-- <IconField class="mt-6">
+        <InputIcon class="pi pi-user mx-8" />
+        <Password v-model="value" toggleMask :feedback="false" />
+      </IconField> -->
+
+      <div>
+        <InputText
+          fluid
+          v-model="password"
+          :type="passwordVisible ? 'text' : 'password'"
+          placeholder="Enter your password"
+          class="p-input-icon-right"
+        >
+          <template #suffix>
+            <i
+              :class="passwordVisible ? 'pi pi-eye-slash' : 'pi pi-eye'"
+              @click="togglePasswordVisibility"
+            />
+          </template>
+        </InputText>
+      </div>
+      <div class="flex justify-end mt-3">
+        <Button label="Entrar" icon="pi pi-check" iconPos="left" />
+      </div>
     </Panel>
   </div>
 </template>
@@ -12,20 +37,16 @@
 <script setup>
 import { ref } from 'vue';
 
-const activeStep = ref(1);
-const completed = ref(false);
-const products = ref();
-const name = ref();
-const email = ref();
-const password = ref();
-const option1 = ref(false);
-const option2 = ref(false);
-const option3 = ref(false);
-const option4 = ref(false);
-const option5 = ref(false);
-const option6 = ref(false);
-const option7 = ref(false);
-const option8 = ref(false);
-const option9 = ref(false);
-const option10 = ref(false);
+const password = ref('');
+const passwordVisible = ref(false);
+
+const togglePasswordVisibility = () => {
+  passwordVisible.value = !passwordVisible.value;
+};
 </script>
+
+<style scoped>
+.p-input-icon-right i {
+  cursor: pointer;
+}
+</style>

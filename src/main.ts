@@ -23,7 +23,7 @@ app.use(
             preset: Aura,
             options: {
                 prefix: 'pv', 
-                darkModeSelector: 'light',
+                darkModeSelector: 'system',
                 cssLayer: false 
             }
         }

@@ -7,24 +7,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('primevue/avatar')['default']
+    Badge: typeof import('primevue/badge')['default']
     Button: typeof import('primevue/button')['default']
-    Card: typeof import('primevue/card')['default']
-    DatePicker: typeof import('primevue/datepicker')['default']
-    Divider: typeof import('primevue/divider')['default']
-    FloatLabel: typeof import('primevue/floatlabel')['default']
     IconField: typeof import('primevue/iconfield')['default']
     InputIcon: typeof import('primevue/inputicon')['default']
     InputText: typeof import('primevue/inputtext')['default']
     Menu: typeof import('primevue/menu')['default']
     Panel: typeof import('primevue/panel')['default']
     Password: typeof import('primevue/password')['default']
-    SplitButton: typeof import('primevue/splitbutton')['default']
-    Step: typeof import('primevue/step')['default']
-    StepList: typeof import('primevue/steplist')['default']
-    StepPanel: typeof import('primevue/steppanel')['default']
-    StepPanels: typeof import('primevue/steppanels')['default']
-    Stepper: typeof import('primevue/stepper')['default']
-    ToggleButton: typeof import('primevue/togglebutton')['default']
-    Toolbar: typeof import('primevue/toolbar')['default']
+  }
+  export interface ComponentCustomProperties {
+    Ripple: typeof import('primevue/ripple')['default']
   }
 }
